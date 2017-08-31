@@ -24,8 +24,15 @@ while not done
       menu.print
       pizza = menu.make_choice
       order.add(pizza)
-    when 2, 3
+    when 2
       done = true
+    when 3
+      order.print
+      puts "Do you wish to pay with"
+      puts "1: ideal"
+      puts "2: creditcard"
+      payment = gets.chomp.to_i
+      done = (payment == 1 || payment == 2)
     else
       puts "I dont understand"
   end
